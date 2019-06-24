@@ -16,7 +16,9 @@ class CustomImageView: UIImageView {
     
     func setPhoto(_ newPhoto: Photo) {
         if photo != nil {
-            return
+            if photo.publicationDate == newPhoto.publicationDate {
+                return
+            }
         }
         photo = newPhoto
     }
